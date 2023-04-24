@@ -204,20 +204,7 @@ namespace ImGuiKnobs {
         }
 
         color_set GetPrimaryColorSet(const char* label) {
-            if (label == "Pitch" || label == "Sub") {
-                auto active = ImVec4(
-                    1.f,
-                    1.f,
-                    1.f,
-                    1.f);
 
-                auto hovered = ImVec4(
-                    1.f,
-                    1.f,
-                    1.f,
-                    1.f);
-                return { active, hovered, hovered };
-            }
             auto active = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
             auto hovered = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
 
@@ -241,7 +228,7 @@ namespace ImGuiKnobs {
         }
 
         color_set GetTrackColorSet(const char *label) {
-            if (label == "Pitch" || label == "Sub" || label == "Amp") {
+            if (label != "Attack" || label != "Sustain" || label != "Decay" || label != "Release") {
                 auto active = ImVec4(
                     .1f,
                     .1f,
